@@ -46,7 +46,7 @@ tr:
       unlocked: 'Hesabınız başarıyla açıldı. Şu anda giriş yapmış bulunuyorsunuz.'
       send_paranoid_instructions: 'Bir hesabınız varsa bir kaç dakika içinde hesabınızın kilitini nasıl açacağınız hakkında bir email alacaksınız.'
     omniauth_callbacks:
-      success: '{kind} hesabından başarıyla onaylandı.'
+      success: '%{kind} hesabından başarıyla onaylandı.'
       failure: '"%{reason}" olmasından dolayı %{kind} hesabından onaylama yapamazsınız.'
     mailer:
       confirmation_instructions:

@@ -1,0 +1,12 @@
+tr:
+    activerecord:                    
+        errors:
+            models:
+                user:
+                    attributes:
+                        email:                            
+                            blank: "boş olamaz."  
+                            invalid: "geçerli değil."             
+                        password:
+                            blank: "boş olamaz."    
+                            too_short: "çok kısa seçtiniz."                            

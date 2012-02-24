@@ -1,0 +1,177 @@
+
+/* Menu Container */
+/* Navigation ( Effect All Pages ) */
+#topmenu {
+	width: 768px;
+	padding:0;
+	padding-left:12px;
+    padding-right:15px;
+    padding-top:15px;
+	float:left;
+	position:relative;
+	z-index:20;
+}
+
+ul.menulist{
+	list-style:none;
+	margin:0;
+	padding:0;
+	
+}
+
+ul.menulist li {
+	float: left; 
+	position: relative;
+	
+}
+
+
+ul.menulist li a
+{
+    display: block;
+    padding: 5px 8px 5px 8px;
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 12px;
+    border-right:1px solid #e1e1e1;
+    border-left:1px solid #fff;
+}
+ul.menulist li a#sol-line
+{
+    display: block;
+    padding: 5px 10px 5px 10px;
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 12px;
+    border-right:1px solid #e1e1e1;
+    border-left:0;
+}
+ul.menulist li a#sag-line
+{
+    display: block;
+    padding: 5px 10px 5px 10px;
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 12px;
+    border-right:0;
+    border-left:1px solid #fff;
+}
+
+
+ul.menulist li a:hover, ul.menulist li a.highlighted:hover, ul.menulist li a.selected, ul.menulist li a:focus, ul.menulist li a#sol-line:hover, ul.menulist li a#sol-line:focus, ul.menulist li a#sol-line.selected, ul.menulist li a#sag-line:hover, ul.menulist li a#sag-line:focus, ul.menulist li a#sag-line.selected
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+    background-image: url('/assets/butonbg.png');
+    background-repeat: repeat-x;
+}
+
+
+.menulist a.highlighted {
+	color: #c20000;		
+}
+
+ul.menulist li ul li a.highlighted {
+	color: #c20000;	
+}
+
+.menulist a .subind {
+	display: none; 
+	height:12px; 
+	width:7px;
+}
+
+.menulist ul a .subind {
+	display: block;
+	float: right;
+}
+
+ul.menulist ul, ul.menulist ul li ul {
+	list-style:none; 
+	display: none; 
+	position: absolute; 
+	padding:0; 
+	list-style:none;  
+	left: -1px;
+	text-align:left;
+	padding-top:0px;
+	width:184px;
+}
+
+ul.menulist ul li ul {
+	margin: -25px 0 0 175px;
+}
+
+
+ul.menulist ul li, ul.menulist ul li ul li { 
+	float: none;
+	background:#fff;
+	height:auto;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	width:184px;
+}
+
+ul.menulist li ul li a, ul.menulist li ul li ul li a {
+	display: block;
+	font-style:normal; 
+	font-size:12px; 
+	color:#666;
+	padding: 4px 0px 4px 5px;
+	margin: 0 0 0 0;
+	border-top:2px solid #fff;	
+	border-left: 4px solid #eee;
+	border-right: 4px solid #ffffff;
+	width: 172px;
+}
+
+
+.menulist li ul li a:hover, .menulist li ul li a .highlighted:hover, .menulist li ul li ul li a:hover, .menulist li ul li ul li a .highlighted:hover, .menulist li ul li ul li a:focus {
+	display: block;
+	padding: 4px 0px 4px 3px;
+	width: 174px;
+	color:#c20000; 
+	background:#eee !important;
+	border-left: 6px solid #c20000;
+	border-right: 2px solid #ffffff;
+	font-size:12px; 	
+}
+
+.menulist ul>li:last-child { 
+	margin-bottom: 1px; 
+}
+
+
+.menulist a { float: left;}
+.menulist ul a { float: none; padding:5px; height:auto; }/* \*/
+.menulist a { float: none; }
+
+
+*:first-child+html .menulist ul li { float: left; width: 100%;}
+*:first-child+html .menulist ul{ margin-left:10px;}
+* html .menulist ul li { float: left; height: 1%;}
+* html .menulist ul a { height: 1%;}
+* html .menulist li a { display:inline; }
+* html .menulist ul { margin:24px 0 0 10px;}
+
+
+.menulist li:hover>ul {
+ display: block;
+}
+
+/* Sort of works ;) */
+.menulist a:focus+ul {
+ display: block;
+}
+
+.menu
+{
+    background-image: url('/assets/menubg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 650px;
+    height: 50px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}

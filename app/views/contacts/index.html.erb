@@ -1,0 +1,32 @@
+<div class="container_12">      
+	<%= render "shared/menu" %>  
+	<%= link_to "Yeni Kişi Kaydı", new_contact_path %>            
+	<table id="hor-minimalist-b" summary="Employee Pay Sheet">
+		<thead>
+		<tr>        
+			<th></th>
+			<th scope="col">Adı</th>
+			<th scope="col">Soyadı</th>
+			<th scope="col">E-Posta</th>
+			<th scope="col">Tel</th>
+			<th scope="col">Cinsiyet</th>
+			<th scope="col">Risk Limit</th>	 
+			<th></th>   	 
+		</tr> 
+		</thead>      
+		<tbody>
+		<% @contacts.each do |contact| %>
+		<tr id="contact_<%= contact.id %>">
+			<td><%= image_tag avatar(contact.email) %></td>
+			<td><%= contact.first_name %></td>
+			<td><%= contact.last_name %></td>
+			<td><%= contact.email %></td>
+			<td><%= contact.phone %></td>
+			<td><%= contact.sex %></td>
+			<td><%= contact.limit %></td> 
+			<td></td>
+		 </tr>
+		 <% end %>
+		</tbody>
+	</table>   
+</div>

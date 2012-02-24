@@ -2,11 +2,13 @@ Varyemez::Application.routes.draw do
 
   root :to => "home#index"
   
-  get "home/main", :as => "login_success"
+  match '/kontrol-panelim.html' => "home#main", :as => "login_success"
+  match '/auth/:provider/callback' => 'authentications#create' 
 
   devise_for :users, :path => "uyeler", :controllers => { :registrations => 'registrations' }
-  resources :authentications
-  match '/auth/:provider/callback' => 'authentications#create' 
+  resources :authentications                                   
+  resources :contacts, :path => "kisiler"
+  
 
 
 end

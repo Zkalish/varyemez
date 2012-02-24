@@ -11,7 +11,50 @@ body {
 	border-bottom:#000;
 	height:100px;
 	width:100%;
-}   
+}         
+
+.guvenlicikis
+{
+    background-position: left top;
+    font-size: 11px;
+    color: #5ba2ff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-image: url('/assets/kapat.png');
+    background-repeat: no-repeat;
+    height: 14px;
+    padding-left: 17px;
+    font-weight: bold;
+    padding-top:1px;  
+	margin-top:14px;
+}
+
+.guvenlicikis:hover
+{
+        color: #fff;
+        background-image: url('/assets/kapathover.png');
+}
+
+.guvenlicikis a:link
+{
+    color: #5ba2ff;
+    text-decoration: none;
+}
+.guvenlicikis a:visited
+{
+    text-decoration: none;
+    color: #5ba2ff;
+}
+.guvenlicikis a:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+.guvenlicikis a:active
+{
+    text-decoration: none;
+    color: #5ba2ff;
+}
 
 .middle-area {
 	margin-top:40px;

@@ -11,7 +11,9 @@ gem 'pg'
 gem 'devise'
 gem 'omniauth'  
 gem 'omniauth-twitter'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook'    
+
+gem 'formtastic'
 
 gem 'pry'
 

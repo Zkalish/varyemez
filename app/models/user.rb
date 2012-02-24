@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   def apply_omniauth(omniauth)
     self.password = Devise.friendly_token[0,20]                     
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+  end     
+  
+  def password_required?
+    (authentications.empty? || !password.blank?) && super
   end
   
                    

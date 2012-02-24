@@ -21,17 +21,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :oauth_provider, :oauth_uid, :remember_me        
   
   validates :email, :uniqueness => {:message => "zaten daha önce kayıt olmuş."}                                          
- 
-                
-=begin
-  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-    data = access_token.extra.raw_info
-    if user = User.where(:email => data.email).first
-      user
-    else # Create a user with a stub password. 
-      User.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
-    end
-  end 
-=end  
   
+  def apply_omniauth(omniauth)
+    self.password = Devise.friendly_token[0,20]                     
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+  end
+  
+                   
 end

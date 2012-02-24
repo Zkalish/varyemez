@@ -4,7 +4,7 @@ Varyemez::Application.routes.draw do
   
   get "home/main", :as => "login_success"
 
-  devise_for :users, :path => "uyeler", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :path => "uyeler", :controllers => { :registrations => 'registrations' }
   resources :authentications
   match '/auth/:provider/callback' => 'authentications#create'
 

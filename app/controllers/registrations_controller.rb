@@ -4,11 +4,6 @@ class RegistrationsController < Devise::RegistrationsController
     session[:omniauth] = nil unless @user.new_record?
   end  
   
-  def new
-    super
-    @user = User.new
-  end
-  
   private
   
   def build_resource(*args)

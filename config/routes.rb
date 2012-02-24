@@ -6,6 +6,7 @@ Varyemez::Application.routes.draw do
 
   devise_for :users, :path => "uyeler", :controllers => { :registrations => 'registrations' }
   resources :authentications
-  match '/auth/:provider/callback' => 'authentications#create'
+  match '/auth/:provider/callback' => 'authentications#create' 
+
 
 end

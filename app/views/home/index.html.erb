@@ -1,10 +1,27 @@
-<h1>Varyemez</h1>
-<p>Yakında yayında !!!</p>    
-
-
-<% if user_signed_in? %>
-<p><%= current_user.email %> giriş yaptı !</p>   
-<%= link_to "Çıkış", destroy_user_session_path, :method => :delete %>     
-<% else %>
-<%= link_to "Üye Girişi", new_user_session_path %> 
-<% end %>
+<div class="container_12 middle-area">   
+	<div class="grid_4">   		
+		<h1>Borçlarınızı takip etmeniz için <span style="color:green;">yeni</span> bir yol. </h1>   
+		<p> Bazen verdiğiniz borçlar geri gelmeyebiliyor. Aslında varyemez olduğunuzu biliyorum. Birine borç verip, arkasından uykusuz kaldığınızı. 
+			<br />
+			Artık farklı bir yolunuz daha var. Varyemez ile siz de alacaklarınızın takibini yapın ve paranızın üstüne kim yatıyor görün.
+			<br /><br />
+			Üstelik kullanmak ücretsiz. Facebook ya da Twitter hesabının olması yeterli.
+			</p>                                                                        
+			<p><%= link_to image_tag("twitter-login.png"), "/auth/twitter" %> <%= image_tag "facebook-login.png"%></p>
+			
+	</div>                   
+	<div class="grid_8">
+		<%= image_tag "mobile-hero.png"%> 
+	</div>
+	<hr />
+<div class="container_12">
+	<div class="grid_4 box">
+		 <h4>Kolay Kullanım</h4>           
+			<%= image_tag "dynamic_page.png" %>
+			<p><code>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+				ex ea commodo consequat.</code></p>
+	</div>
+	<div class="grid_4 box">test 2</div>
+	<div class="grid_4 box">test 3</div>
+</div>  

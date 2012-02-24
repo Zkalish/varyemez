@@ -9,4 +9,6 @@ tr:
                             invalid: "geçerli değil."             
                         password:
                             blank: "boş olamaz."    
-                            too_short: "çok kısa seçtiniz."                            
+                            too_short: "çok kısa seçtiniz."
+            messages:
+                record_invalid: "kayıt hatalı"                            

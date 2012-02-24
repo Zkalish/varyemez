@@ -6,5 +6,5 @@
 <p><%= current_user.email %> giriş yaptı !</p>   
 <%= link_to "Çıkış", destroy_user_session_path, :method => :delete %>     
 <% else %>
-<%= link_to "Üye Girişi", new_user_session_path %> | <%= link_to "Facebook ile Bağlan", user_omniauth_authorize_path(:facebook) %>  
+<%= link_to "Üye Girişi", new_user_session_path %> 
 <% end %>

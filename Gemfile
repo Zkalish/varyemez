@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'pg'
 
 gem 'devise'
+gem 'omniauth'  
+gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 gem 'pry'

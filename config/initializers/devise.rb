@@ -1,7 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|        
-  require 'omniauth-facebook'   
+  # require 'omniauth-facebook'   
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
@@ -213,9 +213,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'                      
-  config.omniauth  :facebook, "364764130215064", "cf464cc6b2fdbc8472f353c1ef74ba94", 
-                   :strategy_class => OmniAuth::Strategies::Facebook,   
-                   :scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
+  #config.omniauth  :facebook, "364764130215064", "cf464cc6b2fdbc8472f353c1ef74ba94", 
+  #                 :strategy_class => OmniAuth::Strategies::Facebook,   
+  #                 :scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
                    
 
   # ==> Warden configuration

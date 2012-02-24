@@ -5,7 +5,9 @@ class AuthenticationsController < ApplicationController
   def create
      auth = request.env["omniauth.auth"]              
      authentication = Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
-     if authentication 
+     if authentication
+       flash[:notice] = "Kullanıcı giriş yaptı."
+       sign_in_and_redirect(:user, authentication.user)        
      else
         user = User.new
         user.password = Devise.friendly_token[0,20]   

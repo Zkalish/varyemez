@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
         User.create(:password => Devise.friendly_token[0,20],
                     :oauth_provider => "twitter", 
                     :oauth_uid => oauth_hash['uid'])
-      end
+      end  
+  end
                                                                                                                          
 
 

@@ -25,14 +25,17 @@ class User < ActiveRecord::Base
     end
   end 
   
-  def self.find_for_twitter_oauth(access_token, signed_in_resource=nil)
-    data = access_token.extra.raw_info
-    if user = User.where(:email => data.email).first
-      user
-    else # Create a user with a stub password. 
-      User.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
-    end
-  end    
+      
+  
+  def self.find_for_twitter_oauth(oauth_hash, signed_in_resource=nil)
+      uid = oauth_hash['uid']
+      if user = User.find_by_oauth_provider_and_oauth_uid('twitter', uid)
+        user
+      else 
+        User.create(:password => Devise.friendly_token[0,20],
+                    :oauth_provider => "twitter", 
+                    :oauth_uid => oauth_hash['uid'])
+      end
                                                                                                                          
 
 

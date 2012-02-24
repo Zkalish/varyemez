@@ -217,7 +217,6 @@ Devise.setup do |config|
                    :strategy_class => OmniAuth::Strategies::Facebook,   
                    :scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
                    
-  config.omniauth  :twitter, "cxjXuVAQwYtclpugaNq7wA", "tWnjikJiGyyowmBYZCeq3aXRB13LCZp4QXiFQEZk"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

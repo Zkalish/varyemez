@@ -10,7 +10,8 @@ gem 'pg'
 
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+
+gem 'pry'
 
 
 # Gems used only for assets and not required

@@ -2,10 +2,6 @@
 class Credit < ActiveRecord::Base 
   belongs_to :contact
   
-
-  after_create :credit_created           
-  
-
   validates :date_from, :presence => true
   validates :date_to, :presence => true                      
   validates :amount, :numericality => true
@@ -36,7 +32,6 @@ class Credit < ActiveRecord::Base
       end        
     end    
   end
-
   
   def credit_created
     if self.credit_type == 1 # borç verilmiş      
@@ -44,7 +39,7 @@ class Credit < ActiveRecord::Base
     else # borcunu ödemiş
       self.contact.update_attributes(:debt => self.contact.debt - self.amount)      
     end
-  end                  
+  end
   
   def borc
     self.amount if credit_type == 1
@@ -52,6 +47,7 @@ class Credit < ActiveRecord::Base
   
   def alacak                       
     self.amount if credit_type == 2
-  end                                  
+  end                         
+  
   
 end

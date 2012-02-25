@@ -31,18 +31,5 @@ class CreditsController < ApplicationController
   
   def edit
     @credit = @contact.credits.find(params[:id])    
-  end   
-  
-  def update
-    @credit = @contact.credits.find(params[:id]) 
-    @credit.update_attributes(params[:credit])
-    if @credit.save 
-      Contact.refresh_debt(@contact) 
-      redirect_to contact_path(@credit.contact), :notice => "Borç/Alacak kaydı güncellemesi yapıldı."
-    else          
-      flash[:alert] = "Güncelleme formunda hata ile karşılaşıldı."
-      render :edit
-    end                                                                                              
-    
   end
 end

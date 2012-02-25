@@ -2,10 +2,10 @@
 class Credit < ActiveRecord::Base 
   belongs_to :contact
   
-<<<<<<< HEAD
+
   after_create :credit_created           
   
-=======
+
   validates :date_from, :presence => true
   validates :date_to, :presence => true                      
   validates :amount, :numericality => true
@@ -36,7 +36,7 @@ class Credit < ActiveRecord::Base
       end        
     end    
   end
->>>>>>> v2.0
+
   
   def credit_created
     if self.credit_type == 1 # borç verilmiş      

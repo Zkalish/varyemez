@@ -9,8 +9,16 @@ module ApplicationHelper
     end
   end
   
-  def avatar(email)
-    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}?s=36&d=mm"        
+  def avatar(email, size)
+    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}?s=#{size}&d=mm"        
+  end    
+  
+  def para_birimi(money)        
+    return number_to_currency(money, { :precision => 2, :unit => "", :delimiter => ".", :separator => "," }).to_s + " TL" unless money.blank?
+  end 
+  
+  def tarih_format(date)
+    return date.strftime("%d-%m-%Y") if date
   end
 
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contact_id: 1
+  amount: 1.5
+  credit_type: 1
+  date_from: 2012-02-25
+  date_to: 2012-02-25
+
+two:
+  contact_id: 1
+  amount: 1.5
+  credit_type: 1
+  date_from: 2012-02-25
+  date_to: 2012-02-25

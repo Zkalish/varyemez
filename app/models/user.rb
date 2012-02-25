@@ -1,7 +1,7 @@
 #encoding:utf-8
 class User < ActiveRecord::Base  
-  has_many :authentications  
-  has_many :contacts
+  has_many :authentications, :dependent => :destroy  
+  has_many :contacts, :dependent => :destroy
   # To use devise-twitter don't forget to include the :twitter_oauth module:
   # e.g. devise :database_authenticatable, ... , :twitter_oauth
 

@@ -14,6 +14,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'    
 
 gem 'formtastic'
+gem 'unicode_utils'
 
 gem 'pry'
 

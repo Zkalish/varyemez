@@ -1,0 +1,8 @@
+<tr id="credit_<%= credit.id %>">           
+	<td><%= tarih_format credit.date_from %></td>
+	<td><%= tarih_format credit.date_to %></td>
+	<td style="color:red;"><%= para_birimi credit.borc %></td>
+	<td style="color:red;"><%= para_birimi credit.alacak %></td>
+	<td><%= credit.description.truncate(80) %></td>	 
+	<td></td>                                     
+</tr>

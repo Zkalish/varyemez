@@ -1,32 +1,61 @@
 <div class="container_12">      
 	<%= render "shared/menu" %>  
-	<%= link_to "Yeni Kişi Kaydı", new_contact_path %>            
-	<table id="hor-minimalist-b" summary="Employee Pay Sheet">
-		<thead>
-		<tr>        
-			<th></th>
-			<th scope="col">Adı</th>
-			<th scope="col">Soyadı</th>
-			<th scope="col">E-Posta</th>
-			<th scope="col">Tel</th>
-			<th scope="col">Cinsiyet</th>
-			<th scope="col">Risk Limit</th>	 
-			<th></th>   	 
-		</tr> 
-		</thead>      
-		<tbody>
-		<% @contacts.each do |contact| %>
-		<tr id="contact_<%= contact.id %>">
-			<td><%= image_tag avatar(contact.email) %></td>
-			<td><%= contact.first_name %></td>
-			<td><%= contact.last_name %></td>
-			<td><%= contact.email %></td>
-			<td><%= contact.phone %></td>
-			<td><%= contact.sex %></td>
-			<td><%= contact.limit %></td> 
-			<td></td>
-		 </tr>
-		 <% end %>
-		</tbody>
-	</table>   
+	<%= link_to "Yeni Kişi Kaydı", "#stylized", :id => "various1", :class => "button" %>            
+	<div class="with-table">
+		<table id="hor-minimalist-b" summary="Employee Pay Sheet">
+			<thead>
+			<tr>        
+				<th></th>
+				<th scope="col">Adı Soyadı</th>
+				<th scope="col">E-Posta</th>
+				<th scope="col">Tel</th>
+				<th scope="col">Cinsiyet</th>
+				<th scope="col">Risk Limit</th>	 
+				<th></th>   	 
+			</tr> 
+			</thead>      
+			<tbody>
+				<%= render @contacts %>	
+			</tbody>
+		</table>               
+	</div>
+</div>         
+<script> 
+$("#various1").fancybox({
+				'titlePosition'		: 'inside',
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+</script>
+<div style="display: none;">
+	<div id="stylized" class="myform" style="width:400px;height:400px;overflow:auto;">     
+		<%= form_for Contact.new, :remote => true do |f| %>
+			<h1>Yeni Kişi Kaydı</h1>
+			<p>Formu doldurarak yeni kişi kaydını oluşturabilirsiniz.</p>
+
+			<label>Adı<span class="small">Kişinin adını giriniz</span></label>        			 
+			<%= f.text_field :first_name %>
+
+			<label>Soyadı<span class="small">Kişinin soyadını giriniz</span></label>        			 
+			<%= f.text_field :last_name %>
+
+			<label>E-Mail</label>        			 
+			<%= f.text_field :email %>
+
+			<label>Telefon</label>        			 
+			<%= f.text_field :phone %>
+
+			<label>Risk Limiti<span class="small">Bu kişi için risk limiti (TL)</span></label>        			 
+			<%= f.text_field :limit %>
+
+			<label>Cinsiyet</label>        			 
+			<%= f.select :sex, ["Bayan", "Bay"] %>  
+
+			<br /><br />
+
+			<%= f.submit "Kaydet", :disable_with => 'Kaydediliyor...', :class => "button" %>
+			<div class="spacer"></div>
+
+		<% end %>	
+	</div>
 </div>

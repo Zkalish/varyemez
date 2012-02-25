@@ -9,6 +9,19 @@ tr:
                             invalid: "geçerli değil."             
                         password:
                             blank: "boş olamaz."    
-                            too_short: "çok kısa seçtiniz."
+                            too_short: "çok kısa seçtiniz." 
+                credit:
+                    attributes:
+                        date_from:
+                            blank: "boş olamaz."   
+                        date_to:
+                            blank: "boş olamaz."  
+                        amount:
+                            not_a_number: "sayı değeri olmalı."                      
             messages:
-                record_invalid: "kayıt hatalı"                            
+                record_invalid: "kayıt hatalı"  
+        attributes:
+            credit:
+                date_from: "İşlem tarihi"
+                date_to: "Vade tarihi"                           
+                amount: "Tutar"          

@@ -1,0 +1,33 @@
+<div class="container_12">      
+	<%= render "shared/menu" %>  
+	<h4 style="color:red;">Alacaklı olanların listesi<h4>         
+	<div class="grid_4">
+		<%= link_to "Excel'e Aktar", "/kisiler/alacaklar.xls", :class => "button" if @contacts.any? %>
+	</div>
+	<div class="with-table">
+		<table id="hor-minimalist-b" summary="Employee Pay Sheet">
+			<thead>
+			<tr>        
+				<th></th>
+				<th scope="col">Adı Soyadı</th>
+				<th scope="col">Borç</th>
+				<th scope="col">E-Mail</th>
+				<th scope="col">Telefon</th>   				 
+				<th></th>   	 
+			</tr> 
+			</thead>      
+			<tbody>
+				<% @contacts.each do |contact| %>
+					<tr id="contact_<%= contact.id %>">
+						<td><%= image_tag avatar(contact.email, 36) %></td>
+						<td><%= link_to contact.name, contact_path(contact) %></td>
+						<td><%= para_birimi contact.debt %></td>
+						<td><%= contact.email %></td>
+						<td><%= contact.phone %></td>						
+						<td></td>
+					 </tr>
+				<% end %>	
+			</tbody>
+		</table>               
+	</div>
+</div>

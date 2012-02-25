@@ -8,6 +8,8 @@ Varyemez::Application.routes.draw do
   devise_for :users, :path => "uyeler", :controllers => { :registrations => 'registrations' }
   resources :authentications                                   
   resources :contacts, :path => "kisiler" do
+    get 'alacaklar', :on => :collection
+    get 'borclar', :on => :collection
     resources :credits
   end
   

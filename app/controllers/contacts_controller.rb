@@ -22,6 +22,21 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-  end             
+  end  
+  
+  def alacaklar
+    @contacts = current_user.contacts.borclular.select("id, first_name, last_name, debt, phone, email")
+    respond_to do |format|
+      format.html
+      format.xls { send_data @contacts.to_xls }
+    end
+  end                                                                             
+  def borclar
+    @contacts = current_user.contacts.alacaklilar.select("id, first_name, last_name, debt, phone, email")
+    respond_to do |format|
+      format.html
+      format.xls { send_data @contacts.to_xls }
+    end
+  end
      
 end

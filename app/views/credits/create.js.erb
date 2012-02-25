@@ -1,1 +1,5 @@
+<% unless @credit.errors.any? %>
 $("#hor-minimalist-b > tbody:last").append("<%= escape_javascript(render @credit) %>");
+$("#guncel_bakiye").empty();
+$("#guncel_bakiye").append("<%= escape_javascript para_birimi(@credit.contact.debt) %>");
+<% end %>

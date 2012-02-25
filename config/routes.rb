@@ -1,6 +1,6 @@
 Varyemez::Application.routes.draw do
 
-  root :to => "home#intro"
+  root :to => "home#index"
   
   match '/kontrol-panelim.html' => "home#main", :as => "login_success"
   match '/auth/:provider/callback' => 'authentications#create' 

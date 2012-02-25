@@ -1,0 +1,68 @@
+<div class="container_12">      
+	<%= render "shared/menu" %>
+	<div class="grid_3">
+		<%= image_tag avatar(@credit.contact.email, 200), :class => "border" %>
+	</div>                                                           
+	<div class="grid_9 last">
+		<h2><%= @credit.contact.name %></h2>
+		<table class="ident_table">
+			<tr>
+				<td>E-Mail : </td>
+				<td><%= @credit.contact.email.downcase %></td>
+			</tr>
+			<tr>
+				<td>Telefon : </td>
+				<td><%= @credit.contact.phone %></td>
+			</tr> 			
+			<tr>
+				<td>Cinsiyet : </td>
+				<td><%= @credit.contact.sex %></td>
+			</tr>                   
+			<tr>
+				<td>Güncel Bakiye : </td>
+				<td id="guncel_bakiye"><%= para_birimi(@credit.contact.debt) %></td>
+			</tr>
+			<tr>
+				<td>Risk Limiti : </td>
+				<td><%= para_birimi(@credit.contact.limit) %></td>
+			</tr>                     
+			<tr>
+				<td>Kilit : </td>
+				<td><%= @credit.contact.lock_status %></td>
+			</tr>			
+		</table>
+	</div>
+	<div class="grid_12">    
+		<hr />
+		<h3>Hesap Dökümü</h3>	 
+	 	<div id="stylized" class="myform" style="width:270;height:370px;overflow:auto;">     
+			<%= form_for [@credit.contact, @credit] do |f| %>
+				<h1>Borç / Alacak İşle</h1>
+				<p>Formu doldurarak yeni kişi kaydını oluşturabilirsiniz.</p>
+
+				<label>Tarih<span class="small">İşlem yapılan tarih</span></label>        			 
+				<%= f.text_field :date_from %>
+
+				<label>Vade Tarihi<span class="small">Vade tarihi</span></label>        			 
+				<%= f.text_field :date_to %>
+
+				<label>Tutar</label>        			 
+				<%= f.text_field :amount %>
+
+				<label>Açıklama<span class="small">En fazla 80 karakter</span></label>        			 
+				<%= f.text_field :description %>
+
+				<label>İşlem Tipi<span class="small">Borç / Alacak</span></label>        			 
+				<%= f.select :credit_type, [["Borç", 1],["Alacak", 2]]  %>
+
+
+				<br /><br />
+
+				<%= f.submit "Kaydet", :disable_with => 'Kaydediliyor...', :class => "button" %>
+				<div class="spacer"></div>
+
+			<% end %>	
+		</div>
+			
+	</div> 
+</div>     

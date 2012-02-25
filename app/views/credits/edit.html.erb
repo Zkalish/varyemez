@@ -35,7 +35,7 @@
 	<div class="grid_12">    
 		<hr />
 		<h3>Hesap Dökümü</h3>	
-		<p><%= :notice %></p> 
+		<p><%= flash[:notice] %></p> 
 	 	<div id="stylized" class="myform" style="width:270;height:370px;overflow:auto;">     
 			<%= form_for [@credit.contact, @credit] do |f| %>
 				<h1>Borç / Alacak İşle</h1>

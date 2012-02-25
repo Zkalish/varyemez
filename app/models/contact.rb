@@ -22,6 +22,12 @@ class Contact < ActiveRecord::Base
   
   def lock_status
     lock ? "Evet" : "Hayır"
+  end   
+  
+  def self.refresh_debt(contact)
+    borc = contact.credits.where(:credit_type => 1).sum(:amount)
+    alacak = contact.credits.where(:credit_type => 2).sum(:amount)
+    contact.update_attributes(:debt => borc-alacak)
   end
                    
 end

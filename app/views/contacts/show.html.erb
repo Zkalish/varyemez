@@ -68,7 +68,8 @@ $("#various1").fancybox({
 	<div id="stylized" class="myform" style="width:270;height:370px;overflow:auto;">     
 		<%= form_for [@contact, Credit.new], :remote => true do |f| %>
 			<h1>Borç / Alacak İşle</h1>
-			<p>Formu doldurarak yeni kişi kaydını oluşturabilirsiniz.</p>
+			<p>Formu doldurarak yeni kişi kaydını oluşturabilirsiniz.</p> 
+			
 
 			<label>Tarih<span class="small">İşlem yapılan tarih</span></label>        			 
 			<%= f.text_field :date_from %>

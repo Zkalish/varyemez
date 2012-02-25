@@ -34,11 +34,14 @@
 	</div>
 	<div class="grid_12">    
 		<hr />
-		<h3>Hesap Dökümü</h3>	 
-	 	<div id="stylized" class="myform" style="width:270;height:370px;overflow:auto;">     
+		<h3>Borç / Alacak Güncelleme</h3>	 
+	 	<div id="stylized" class="myform" style="width:270;height:400px;overflow:auto;">     
 			<%= form_for [@credit.contact, @credit] do |f| %>
 				<h1>Borç / Alacak İşle</h1>
-				<p>Formu doldurarak yeni kişi kaydını oluşturabilirsiniz.</p>
+				<p>
+					Daha önce kaydettiğiniz borç/alacak kaydını güncellemek üzeresiniz. 
+					Yapacağınız değişiklikler kişinin güncel borç bilgisine yansıyacaktır.
+				</p>
 
 				<label>Tarih<span class="small">İşlem yapılan tarih</span></label>        			 
 				<%= f.text_field :date_from %>
@@ -58,7 +61,7 @@
 
 				<br /><br />
 
-				<%= f.submit "Kaydet", :disable_with => 'Kaydediliyor...', :class => "button" %>
+				<%= f.submit "Güncelle", :disable_with => 'Güncelleniyor...', :class => "button" %>
 				<div class="spacer"></div>
 
 			<% end %>	

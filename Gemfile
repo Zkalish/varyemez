@@ -14,7 +14,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'    
 
 gem 'formtastic'
-gem 'unicode_utils'
+gem 'unicode_utils' 
+gem 'to_xls'
 
 gem 'pry'
 

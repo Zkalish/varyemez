@@ -8,7 +8,20 @@ class AuthenticationsController < ApplicationController
      if authentication
        flash[:notice] = "Kullanıcı giriş yaptı."
        sign_in_and_redirect(:user, authentication.user)        
-     else
+     elsif current_user
+       # daha önce farklı bir provider ile login olmuş. Yeni provider kaydını yapacağız. 
+       token = ""
+       token_secret = ""       
+       if auth['provider'] == "facebook"            
+         token = auth['credentials'].token
+       end                                                             
+       if auth['provider'] == "twitter"
+         token = auth['credentials'].token
+         token_secret = auth['credentials'].secret
+       end                                                
+       user.authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)                   
+       redirect_to contacts_path
+     else         
         user = User.new
         user.password = Devise.friendly_token[0,20]   
         

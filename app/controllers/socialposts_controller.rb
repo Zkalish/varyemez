@@ -19,7 +19,9 @@ class SocialpostsController < ApplicationController
     if facebook.present?    
         me = FbGraph::User.me(facebook.token)
         me.feed!(
-          :message => "#{params[:tweet]}"
+          :message => "#{params[:tweet]}",
+          :link => 'http://varyemez.herokuapp.com',
+          :name => 'Siz de alacaklarınızı facebook üzerinden duyurun. Varyemez ile çok kolay :)',
         )
     end
   end

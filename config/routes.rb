@@ -11,7 +11,8 @@ Varyemez::Application.routes.draw do
     get 'alacaklar', :on => :collection
     get 'borclar', :on => :collection
     resources :credits
-  end
+  end          
+  resources :tweets
   
 
 end

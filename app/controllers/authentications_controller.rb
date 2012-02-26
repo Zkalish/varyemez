@@ -11,10 +11,24 @@ class AuthenticationsController < ApplicationController
      else
         user = User.new
         user.password = Devise.friendly_token[0,20]   
+        
+        token = ""
+        token_secret = ""
+        
         if auth['provider'] == "facebook"            
-          user.email = auth['extra']['raw_info'].email           
-        end
-        user.authentications.build(:provider => auth['provider'], :uid => auth['uid'])
+          token = auth['credentials'].token
+          user.email = auth['extra']['raw_info'].email                     
+        end                                                      
+        
+        if auth['provider'] == "twitter"
+          token = auth['credentials'].token
+          token_secret = auth['credentials'].secret
+        end   
+        
+        binding.pry
+                                        
+        user.authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)
+        
         if user.save
           flash[:notice] = "Kullanıcı giriş yaptı."
           sign_in_and_redirect(:user, user)                

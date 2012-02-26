@@ -35,9 +35,14 @@
 	<div class="grid_12">    
 		<hr />
 		<h3>Hesap Dökümü</h3>	 
-		<div class="grid_4 push_8">
-		   <%= link_to "PDF Al", contact_credits_path(@contact, :format => "pdf"), :class => "button" %> <%= link_to "Yeni Borç / Alacak Kaydı", new_contact_credit_path(@contact), :class => "button" %>
-		</div>
+		<div class="grid_6">
+			<% if @contact.debt > 0 %>
+		   		<%= link_to "Sosyal Medyada İfşa Et", tweets_path(:tweet => "#{@contact.name} bana borcunu ödemiyor. Borcu #{para_birimi @contact.debt} oldu."), :method => :post, :remote => true, :class => "button" %> 
+	   		<% end %>
+			<%= link_to "PDF Al", contact_credits_path(@contact, :format => "pdf"), :class => "button" %> 
+			<%= link_to "Yeni Borç / Alacak Kaydı", new_contact_credit_path(@contact), :class => "button" %>
+		</div>                                                                                              
+		<div class="grid_12"><br /></div>
 		<div class="with-table">
 			<table id="hor-minimalist-b" summary="Employee Pay Sheet">
 				<thead>

@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   
   def apply_omniauth(omniauth)
     self.password = Devise.friendly_token[0,20]                     
-    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'], :token => omniauth['credentials'].token, :token_secret => omniauth['credentials'].secret)
   end    
   
                    

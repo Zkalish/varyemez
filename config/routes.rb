@@ -9,7 +9,8 @@ Varyemez::Application.routes.draw do
   resources :authentications                                   
   resources :contacts, :path => "kisiler" do
     get 'alacaklar', :on => :collection
-    get 'borclar', :on => :collection
+    get 'borclar', :on => :collection 
+    post 'lock', :on => :member
     resources :credits
   end          
   resources :socialposts

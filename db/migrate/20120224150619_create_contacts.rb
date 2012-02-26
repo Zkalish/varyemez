@@ -7,7 +7,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :email
       t.string :sex
       t.string :phone
-      t.boolean :lock
+      t.boolean :lock, :default => 0
 
       t.timestamps
     end

@@ -1,9 +1,12 @@
 <tr id="contact_<%= contact.id %>">
 	<td><%= image_tag avatar(contact.email, 36) %></td>
-	<td><%= link_to contact.name, contact_path(contact) %></td>
+	<td><%= image_tag("lock.png") if contact.lock_status == "Evet" %><%= link_to contact.name, contact_path(contact) %></td>
 	<td><%= contact.email %></td>
 	<td><%= contact.phone %></td>
 	<td><%= contact.sex %></td>
 	<td><%= contact.limit %></td> 
-	<td><%= link_to "Sil", contact_path(contact), :method => :delete, :remote => true %></td>
+	<td>
+		<%= link_to "Sil", contact_path(contact), :method => :delete, :remote => true %> 
+		<%= lock_action(contact) %>		
+	</td>
  </tr>

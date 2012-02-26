@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   end  
   
   def create   
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(params[:contact]) 
     @contact.user = current_user
     if @contact.save
       flash[:notice] = "Yeni kişi başarılı bir şekilde oluşturuldu."
@@ -31,12 +31,19 @@ class ContactsController < ApplicationController
       format.xls { send_data @contacts.to_xls }
     end
   end                                                                             
+
   def borclar
     @contacts = current_user.contacts.alacaklilar.select("id, first_name, last_name, debt, phone, email")
     respond_to do |format|
       format.html
       format.xls { send_data @contacts.to_xls }
     end
+  end   
+  
+  def lock
+    @contact = Contact.find(params[:id])
+    @contact.update_attributes(:lock => !@contact.lock)
+    redirect_to contacts_path
   end
      
 end

@@ -15,13 +15,14 @@ class SocialpostsController < ApplicationController
     
     #facebook üzerinde borçlu olanı ifşa ediyoruz ... 
     facebook = current_user.authentications.find_by_provider("facebook")
-    if facebook.present?  
-      me = FbGraph::User.me(facebook.token)
-       me.feed!(
-          :message => params[:tweet],
-          :link => '',
-          :name => '',
-          :description => ''
+    if facebook.present?    
+        me = FbGraph::User.me(facebook.token)
+        me.feed!(
+          :message => 'Updating via FbGraph',
+          :picture => 'https://graph.facebook.com/matake/picture',
+          :link => 'https://github.com/nov/fb_graph',
+          :name => 'FbGraph',
+          :description => 'A Ruby wrapper for Facebook Graph API'
         )
     end
   end

@@ -23,9 +23,7 @@ class AuthenticationsController < ApplicationController
         if auth['provider'] == "twitter"
           token = auth['credentials'].token
           token_secret = auth['credentials'].secret
-        end   
-        
-        binding.pry
+        end         
                                         
         user.authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)
         

@@ -8,8 +8,7 @@ class Contact < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :first_name, :presence => {:message => "boş olmamalıdır."}
   validates :last_name, :presence => {:message => "boş olmamalıdır."}
-  validates :email, :presence => {:message => "boş olmasınki borçlarını hatırlatalım."}, 
-                   :uniqueness => {:message => "daha önce kaydedilmiş"}  
+  validates :email, :presence => {:message => "boş olmasınki borçlarını hatırlatalım."}                   
                    
 
   scope :borclular, where(["debt > 0"])      

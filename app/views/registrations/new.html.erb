@@ -1,12 +1,14 @@
-<h2>Sign up</h2>
+<div class="container_12">                                                                          
+	<div class="grid_5 push_1" style="padding-top:12px;">
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		    
+		  <h5>Lütfen e-mail adresinizi giriniz</h5>
+		  <p>Twitter ile bağlanıyorsunuz ve email adresinizi de almamız gerekiyor. Alacaklarınızı ve borçlarınızı bu mail adresine hatırlatacağız.</p>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+		  <div><%= f.label :email %><br />
+		  <%= f.email_field :email %></div>
    
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "links" %>
+		  <div><%= f.submit "Sign up" %></div>
+		<% end %>                 
+	</div>
+</div>                          

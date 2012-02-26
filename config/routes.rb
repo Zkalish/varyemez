@@ -12,7 +12,7 @@ Varyemez::Application.routes.draw do
     get 'borclar', :on => :collection
     resources :credits
   end          
-  resources :tweets
+  resources :socialposts
   
 
 end

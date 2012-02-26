@@ -36,7 +36,8 @@
 		<hr />
 		<h3>Hesap Dökümü</h3>	 
 		<div class="grid_6">
-			<% if @contact.debt > 0 %>
+			<% if @contact.debt > 0 %>     
+				<%= link_to "Bilgilendirme Mail Gönder", mailsenders_path(:email => @contact.email, :name => @contact.name, :debt => @contact.debt), :method => :post, :remote => true, :class => "button" %>
 		   		<%= link_to "Sosyal Medyada İfşa Et", socialposts_path(:tweet => "#{@contact.name} bana borcunu ödemiyor. Borcu #{para_birimi @contact.debt} oldu."), :method => :post, :remote => true, :class => "button" %> 
 	   		<% end %>
 			<%= link_to "PDF Al", contact_credits_path(@contact, :format => "pdf"), :class => "button" %> 

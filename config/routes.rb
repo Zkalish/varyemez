@@ -13,6 +13,7 @@ Varyemez::Application.routes.draw do
     resources :credits
   end          
   resources :socialposts
+  resources :mailsenders
   
 
 end

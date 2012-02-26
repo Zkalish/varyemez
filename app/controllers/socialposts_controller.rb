@@ -18,11 +18,10 @@ class SocialpostsController < ApplicationController
     if facebook.present?    
         me = FbGraph::User.me(facebook.token)
         me.feed!(
-          :message => 'Updating via FbGraph',
-          :picture => 'https://graph.facebook.com/matake/picture',
-          :link => 'https://github.com/nov/fb_graph',
-          :name => 'FbGraph',
-          :description => 'A Ruby wrapper for Facebook Graph API'
+          :message => "#{params[:tweet]}",
+          :link => 'http://varyemez.herokuapp.com',
+          :name => 'Borç ifşası',
+          :description => 'Borcunu ifşa ediyorum.'
         )
     end
   end

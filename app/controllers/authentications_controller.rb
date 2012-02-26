@@ -19,7 +19,8 @@ class AuthenticationsController < ApplicationController
          token = auth['credentials'].token
          token_secret = auth['credentials'].secret
        end                                                
-       current_user.authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)                   
+       current_user.authentications.create(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)                   
+
        redirect_to contacts_path
      else         
         user = User.new

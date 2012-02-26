@@ -16,6 +16,7 @@ gem 'omniauth-facebook'
 gem 'formtastic'
 gem 'unicode_utils' 
 gem 'to_xls'
+gem 'prawn'
 
 gem 'pry'
 

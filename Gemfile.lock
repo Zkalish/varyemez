@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.1)
     actionmailer (3.2.0)
       actionpack (= 3.2.0)
       mail (~> 2.4.0)
@@ -89,8 +90,14 @@ GEM
     omniauth-twitter (0.0.8)
       omniauth-oauth (~> 1.0)
     orm_adapter (0.0.6)
+    pdf-reader (1.0.0)
+      Ascii85 (~> 1.0.0)
+      ruby-rc4
     pg (0.13.2)
     polyglot (0.3.3)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     pry (0.9.8.2)
       coderay (~> 1.0.5)
       method_source (~> 0.7)
@@ -121,6 +128,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     ruby-ole (1.2.11.2)
+    ruby-rc4 (0.1.5)
     sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -141,6 +149,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     tzinfo (0.3.31)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -162,6 +171,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   pg
+  prawn
   pry
   rails (= 3.2.0)
   sass-rails (~> 3.2.3)

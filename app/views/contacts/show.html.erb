@@ -35,8 +35,8 @@
 	<div class="grid_12">    
 		<hr />
 		<h3>Hesap Dökümü</h3>	 
-		<div class="grid_3 push_9">
-		   <%= link_to "Yeni Borç / Alacak Kaydı", new_contact_credit_path(@contact), :class => "button" %>
+		<div class="grid_4 push_8">
+		   <%= link_to "PDF Al", contact_credits_path(@contact, :format => "pdf"), :class => "button" %> <%= link_to "Yeni Borç / Alacak Kaydı", new_contact_credit_path(@contact), :class => "button" %>
 		</div>
 		<div class="with-table">
 			<table id="hor-minimalist-b" summary="Employee Pay Sheet">

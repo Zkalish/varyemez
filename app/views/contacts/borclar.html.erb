@@ -1,9 +1,6 @@
 <div class="container_12">      
 	<%= render "shared/menu" %>  
 	<h4 style="color:red;">Alacaklı olanların listesi<h4>         
-	<div class="grid_4">
-		<%= link_to "Excel'e Aktar", "/kisiler/alacaklar.xls", :class => "button" if @contacts.any? %>
-	</div>
 	<div class="with-table">
 		<table id="hor-minimalist-b" summary="Employee Pay Sheet">
 			<thead>
@@ -29,5 +26,8 @@
 				<% end %>	
 			</tbody>
 		</table>               
+	</div>
+	<div class="grid_4">
+		<%= link_to "Excel'e Aktar", borclar_contacts_path(:format => "xls"), :class => "button" if @contacts.any? %>
 	</div>
 </div>

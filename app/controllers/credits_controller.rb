@@ -4,7 +4,17 @@ class CreditsController < ApplicationController
   
   def get_contact
     @contact = Contact.find(params[:contact_id])
-  end    
+  end   
+  
+  def index
+    @credits = @contact.credits
+    respond_to do |format|
+      format.pdf do
+        pdf = HesapDokumPdf.new(@contact, view_context)
+        send_data pdf.render, :filename => "#{@contact.name} Hesap Dökümü", :type => "application/pdf", :dispoisition => "inline"
+      end
+    end
+  end 
   
   def new
     @credit = @contact.credits.build

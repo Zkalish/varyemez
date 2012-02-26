@@ -4,5 +4,5 @@
 	<td style="color:red;"><%= para_birimi credit.borc %></td>
 	<td style="color:red;"><%= para_birimi credit.alacak %></td>
 	<td><%= credit.description.truncate(80) %></td>	 
-	<td><%= link_to "Güncelle", edit_contact_credit_path(credit.contact, credit)  %></td>                                     
+	<td><%= link_to_if credit.contact.lock_status == "Hayır", "Güncelle", edit_contact_credit_path(credit.contact, credit)  %></td>                                     
 </tr>

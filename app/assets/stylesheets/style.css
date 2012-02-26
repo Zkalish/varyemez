@@ -149,7 +149,12 @@ body {
 
 .error-box h4 {
 	border-bottom:1px solid gray;
-}     
+}                               
+
+.uyari {
+	padding-bottom:12px;
+	color:green;
+}
 
 
 .box {

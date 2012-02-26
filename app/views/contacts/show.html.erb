@@ -34,7 +34,12 @@
 	</div>
 	<div class="grid_12">    
 		<hr />
-		<h3>Hesap Dökümü</h3>	 
+		<h3>Hesap Dökümü</h3>	
+		<% if @contact.lock_status == "Evet" %>
+			<div class="grid_12 uyari">
+				<h6><%= @contact.name %> hesabı kilitli olduğu için yeni borç/alacak kaydı yapamaz ve mevcut kayıtları güncelleyemezsiniz.</h6>
+			</div>  	                       
+		<% end %>
 		<div class="grid_8">
 			<% if @contact.debt > 0 %>     
 				<%= link_to "Bilgilendirme Mail Gönder", mailsenders_path(:email => @contact.email, :name => @contact.name, :debt => @contact.debt), :method => :post, :remote => true, :class => "button" %>

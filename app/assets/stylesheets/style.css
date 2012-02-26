@@ -143,7 +143,7 @@ body {
 	border-radius:4px;     
 	margin:9px;  
 	height:320px;       
-	border:1px solid #ccc;   		      
+	border:1px solid #ccc;   		    
 }  
 
 .box a {
@@ -153,28 +153,28 @@ body {
 	color:#000;
 }                 
 
-.box h4 {         
-	margin:4px;  
-	font-size: 18px;  
-	text-align:center;
+.box h4 {           
+	font-size: 15px; 
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
-	color:#333; 
+	color:green;     
+	margin-top:4px;
+	margin-left:10px;           
+	margin-right:10px;
+	border-bottom:1px solid gray;
+	
 }    
 .box p {
 	font-family:'Helvetica';
-	font-size:10px;   
+	font-size:12px;   
 	line-height:17px;
-	color:#fff; 
+	color:#000; 
 	text-align:left;
 	margin-left:10px;
 	margin-right:10px;
 }        
 
 .box img {
-	margin-top:6px;
-	margin-left:4px;
-	margin-right:4px;
-	margin-bottom:4px;
+	margin-left:10px;
 }
 
 .center {

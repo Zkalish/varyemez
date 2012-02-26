@@ -18,7 +18,7 @@ gem 'unicode_utils'
 gem 'to_xls'
 gem 'prawn'
 gem 'twitter'
-
+gem "fbgraph"
 
 gem 'pry'
 

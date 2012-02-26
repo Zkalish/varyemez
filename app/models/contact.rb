@@ -8,7 +8,8 @@ class Contact < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :first_name, :presence => {:message => "boş olmamalıdır."}
   validates :last_name, :presence => {:message => "boş olmamalıdır."}
-  validates :email, :presence => {:message => "boş olmasınki borçlarını hatırlatalım."}                   
+  validates :email, :presence => {:message => "boş olmasın ki borçlarını hatırlatalım."}
+  validates :email, :format => {:with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, :message => "gerçerli değil !"}, :if => "email.present?"                   
                    
 
   scope :borclular, where(["debt > 0"])      

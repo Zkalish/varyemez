@@ -26,7 +26,7 @@ class CreditsController < ApplicationController
     # limit değerleri kontrol edilecek ve uyarı varsa verilecek.
     if !params[:accept]
       unless @credit.borc_verilebilirmi
-        flash[:notice] = "Borç vermenizi şiddetle tavsiye etmiyorum."
+        flash[:alert] = "Borç vermenizi şiddetle tavsiye etmiyorum."
         render :new; return
       end              
     end

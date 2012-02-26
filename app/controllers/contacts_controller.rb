@@ -3,17 +3,37 @@ class ContactsController < ApplicationController
   
   def index             
     @contacts = current_user.contacts    
-  end  
+  end            
+  
+  def new
+    @contact = Contact.new
+  end
   
   def create   
     @contact = Contact.new(params[:contact]) 
     @contact.user = current_user
     if @contact.save
-      flash[:notice] = "Yeni kişi başarılı bir şekilde oluşturuldu."
-    else                                                            
-      flash[:alert] = "Yeni kişi yaratırken hata ile karşılaşıldı."
+      redirect_to contacts_path, :notice => "Yeni kişi başarılı bir şekilde oluşturuldu."
+    else            
+      flash[:notice] = "Yeni kişi kaydında hata ile karşılaşıldı."
+      render :new
     end
-  end 
+  end   
+  
+  def edit
+    @contact = Contact.find(params[:id])
+  end    
+  
+  def update
+    @contact = Contact.find(params[:id])
+    @contact.user_id = current_user.id
+    if @contact.update_attributes(params[:contact])
+      redirect_to contacts_path, :notice => "Kayıt başarılı bir şekilde güncellendi."
+    else
+      flash[:notice] = "Güncelleme formunda hata ile karşılaşıldı."
+      render :edit
+    end
+  end
   
   def show
     @contact = Contact.find(params[:id])

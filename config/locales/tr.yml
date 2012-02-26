@@ -24,4 +24,8 @@ tr:
             credit:
                 date_from: "İşlem tarihi"
                 date_to: "Vade tarihi"                           
-                amount: "Tutar"          
+                amount: "Tutar"
+            contact:
+                first_name: "Adı"
+                last_name: "Soyadı"
+                          

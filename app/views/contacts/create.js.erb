@@ -1,1 +1,5 @@
-$("#hor-minimalist-b > tbody:last").append("<%= escape_javascript(render @contact) %>");
+<% if @contact.errors.any? %>
+	alert(<%= @hatalar.join('\n') %>);
+<% else %>
+	$("#hor-minimalist-b > tbody:last").append("<%= escape_javascript(render @contact) %>");
+<% end %>

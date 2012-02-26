@@ -134,7 +134,23 @@ body {
 	height:100px;
 	width:100%;       
 	margin-top:20px;
-}
+}                    
+
+.error-box {
+	background-color:#fff;
+	padding-left:30px;
+	padding-top:8px;
+	padding-right:30px;
+	padding-bottom:8px;  
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}  
+
+.error-box h4 {
+	border-bottom:1px solid gray;
+}     
+
 
 .box {
 	background-color:#fff;

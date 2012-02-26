@@ -2,7 +2,7 @@
 	<%= render "shared/menu" %>
 	<% if @contact.errors.any? %>
 	<div class="grid_120 error-box">
-		<h4><%= notice %></h4>
+		<h4>Murat güzel<%= notice %></h4>
 		<p>
 			<ul>
 				<% @contact.errors.full_messages.each do |error| %>
@@ -15,8 +15,8 @@
 	<div class="with-table">
 		<div id="stylized" class="myform" style="width:400px;height:430px;overflow:auto;">     
 			<%= form_for @contact do |f| %>
-				<h1>Yeni Kişi Kaydı</h1>
-				<p>Formu doldurarak yeni kişi kaydı oluşturabilirsiniz.</p>
+				<h1>Güncelle</h1>
+				<p>Formu doldurarak <%= @contact.name %> adlı kişinin bilgilerini güncelleyebilirsiniz.</p>
 
 				<label>Adı<span class="small">Kişinin adını giriniz</span></label>        			 
 				<%= f.text_field :first_name %>

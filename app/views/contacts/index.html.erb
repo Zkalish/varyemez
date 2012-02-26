@@ -1,6 +1,7 @@
 <div class="container_12">      
-	<%= render "shared/menu" %>  
-	<%= link_to "Yeni Kişi Kaydı", "#stylized", :id => "various1", :class => "button" %>            
+	<%= render "shared/menu" %>    
+    <h4><%= notice %></h4>
+	<%= link_to "Yeni Kişi Kaydı", new_contact_path, :class => "button" %>            
 	<div class="with-table">
 		<table id="hor-minimalist-b" summary="Employee Pay Sheet">
 			<thead>

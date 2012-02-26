@@ -19,7 +19,7 @@ class Credit < ActiveRecord::Base
     #risk limiti kontrolü yapıyor ...     
     if self.contact.limit.nil? || self.contact.limit == 0
       # risk limiti tanımlı değil. O halde borç verilen tutar tahsil edilmeden yeni borç verilmemesi gerektiği uyarılacak ... 
-      if self.credit_type == 1 && self.contact.debt > 0
+      if self.credit_type == 1 && self.contact.debt > 1
         return false
       else
         return true

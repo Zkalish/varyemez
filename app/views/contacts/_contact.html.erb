@@ -7,6 +7,7 @@
 	<td><%= contact.limit %></td> 
 	<td>
 		<%= link_to "Sil", contact_path(contact), :method => :delete, :remote => true %> 
+		<%= link_to "Güncelle", edit_contact_path(contact) %>
 		<%= lock_action(contact) %>		
 	</td>
  </tr>
